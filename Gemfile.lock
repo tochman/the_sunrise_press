@@ -130,7 +130,10 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+<<<<<<< HEAD
     hashie (3.6.0)
+=======
+>>>>>>> 516b6632e1135a6f04b788321d17ad82ac27f31d
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
