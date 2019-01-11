@@ -6,17 +6,18 @@ Feature: Visitor can read a specific article
 
     Background:
         Given the following article exists:
-            | title | description        | content               | journalist |
-            | News  | This is an article | I like to eat cheese! | Jon        |
+            | title | description             | content                      | journalist |
+            | News  | This is an article      | I like to eat cheese!        | Jon        |
+            | News2 | This is another article | I do not like to eat cheese! | Greg       |
         And I visit the landing page
-        And I click on "Read more"
+        When I click "Read" within "News"
 
     Scenario: Visitor can see specific article
-        Then I should see "News"
+        And I should see "News"
         And I should see "I like to eat cheese!"
         And I should see "Jon"
 
     Scenario: Visitor can navigate back to the landing page
-        When I click on "Back"
-        Then I should see "News"
+        Then I click on "The Sunrise Press"
+        And I should see "News"
         And I should see "This is an article"
