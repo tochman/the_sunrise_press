@@ -1,5 +1,4 @@
 - @articles.each do |article|
     %h1= article.title
-    %p= "Writen by #{article.journalist}"
     %h3= article.description
-    %p= article.content
+    = link_to "Read more", article_path(article)
