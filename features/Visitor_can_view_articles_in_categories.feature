@@ -17,7 +17,7 @@ Feature: Visitor can see articles in categories
 
     Scenario: Visitor can see based on categories
         When I click on 'Weather'
-        Then I should see "Article"
-        And I should see "This is an article"
-        And I should not see "News"
-        And I should not see "This is a news"
+        Then I should see 'Article'
+        And I should see 'This is an article'
+        And I should not see 'News'
+        And I should not see 'This is a news'
