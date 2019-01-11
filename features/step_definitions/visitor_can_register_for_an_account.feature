@@ -6,8 +6,8 @@ Feature: Visitor can register for an account
 
     Background:
         Given the following user exists
-        | name | email          | password | password_confirmation |
-        | Bill | bill@email.com | password | password              |
+        | email          | password | password_confirmation |
+        | bill@email.com | password | password              |
         Given I visit the landing page
         And I click 'Register'
 
