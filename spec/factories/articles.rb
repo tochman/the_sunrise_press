@@ -4,5 +4,6 @@ FactoryBot.define do
     description { 'It is not long' }
     content { 'As I told you, that is it' }
     journalist { 'Jon' }
+    category
   end
 end

@@ -1,4 +1,9 @@
+Article.destroy_all
+Category.destroy_all
 
-Article.create(title: 'The storm is comming', description: 'It is going to rain tomorrow', content: 'It is going to rain alot tomorrow', journalist: 'Johanna')
-Article.create(title: 'No it is not comming !', description: 'It turned out it did not rain at all!', content: 'Shocking really', journalist: 'Greg')
-Article.create(title: 'Actually the sun was comming', description: 'Much better right?', content: 'It was quite warm!', journalist: 'John')
+Category.create(name: 'Weather')
+Category.create(name: 'Sport')
+
+Article.create(title: 'The storm is comming', description: 'It is going to rain tomorrow', content: 'It is going to rain alot tomorrow', journalist: 'Johanna', category_id: 1)
+Article.create(title: 'No it is not comming !', description: 'It turned out it did not rain at all!', content: 'Shocking really', journalist: 'Greg', category_id: 1)
+Article.create(title: 'Arsenal has lost against the Fradi!', description: 'I cannot believe it either!', content: 'The world is amazed by this!', journalist: 'John', category_id: 2)

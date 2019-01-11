@@ -11,5 +11,5 @@ Feature: Visitor can view all listed articles
 
    Scenario: Visitor can see articles on index page
       Given I visit the landing page
-      Then I should see "News"
-      Then I should see "This is an article"
+      Then I should see 'News'
+      Then I should see 'This is an article'

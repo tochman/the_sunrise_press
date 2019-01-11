@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_01_11_091312) do
     t.string "journalist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +40,11 @@ ActiveRecord::Schema.define(version: 2019_01_11_091312) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "articles", "categories"
 end
