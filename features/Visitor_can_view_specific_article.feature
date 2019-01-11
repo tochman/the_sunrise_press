@@ -6,11 +6,11 @@ Feature: Visitor can read a specific article
 
     Background:
         Given the following article exists:
-            | title | description             | content                      | journalist |
-            | News  | This is an article      | I like to eat cheese!        | Jon        |
-            | News2 | This is another article | I do not like to eat cheese! | Greg       |
+            | title   | description         | content                      | journalist |
+            | News    | This is a news      | I like to eat cheese!        | Jon        |
+            | Article | This is an  article | I do not like to eat cheese! | Greg       |
         And I visit the landing page
-        When I click "Read" within "News"
+        And I click "Read" within "News"
 
     Scenario: Visitor can see specific article
         And I should see "News"
