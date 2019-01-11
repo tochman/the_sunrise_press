@@ -16,7 +16,11 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
         @article.update(category: find_category)
         @article.save
-        redirect_to root_path
+        if @article.persisted?
+            redirect_to article_path(@article)
+          else
+            redirect_to new_article_path, notice: "Every field needs to be filled in!"
+          end
     end
 
     private

@@ -1,8 +1,8 @@
 Article.destroy_all
 Category.destroy_all
 
-Category.create(name: 'Weather')
-Category.create(name: 'Sport')
+Category.create(name: 'Weather', id: 1)
+Category.create(name: 'Sport', id: 2)
 
 Article.create(title: 'The storm is comming', description: 'It is going to rain tomorrow', content: 'It is going to rain alot tomorrow', journalist: 'Johanna', category_id: 1)
 Article.create(title: 'No it is not comming !', description: 'It turned out it did not rain at all!', content: 'Shocking really', journalist: 'Greg', category_id: 1)

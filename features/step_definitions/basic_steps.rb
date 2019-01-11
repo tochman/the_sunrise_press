@@ -27,3 +27,11 @@ Given("I click {string} within {string}") do |element, card|
         click_on element
     end
 end
+
+Given("I fill in {string} field with {string}") do |element, value|
+    fill_in element,with: value
+end
+
+Given("I select {string} from Category") do |option|
+    select option, from: 'article[category_id]'
+end
