@@ -20,6 +20,8 @@ end
 
 Given("I fill in {string} field with {string}") do |field, input|
     fill_in field, with: input
+end
+
 Given("I click on {string}") do |link|
     click_on link
 end
