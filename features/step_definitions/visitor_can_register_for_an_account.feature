@@ -12,8 +12,7 @@ Feature: Visitor can register for an account
         And I click 'Register'
 
     Scenario: When I fill in the sign up form correctly, I can sign up
-        Given I fill in 'Name' field with 'Jim'
-        And I fill in 'Email' field with 'mail@email.com'
+        Given I fill in 'Email' field with 'mail@email.com'
         And I fill in 'Password' field with 'password'
         And I fill in 'Password confirmation' field with 'password'
         And I click 'Register'
