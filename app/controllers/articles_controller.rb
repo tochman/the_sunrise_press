@@ -15,12 +15,11 @@ class ArticlesController < ApplicationController
     def create
         @article = Article.new(article_params)
         @article.update(category: find_category)
-        @article.save
-        if @article.persisted?
+        if @article.save
             redirect_to article_path(@article)
-          else
+        else
             redirect_to new_article_path, notice: "Every field needs to be filled in!"
-          end
+        end
     end
 
     private

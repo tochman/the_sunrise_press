@@ -5,7 +5,11 @@ Feature: Journalist can create article
     I would like to be able to have an article creation form
 
     Background: 
-        Given I visit the landing page
+        Given the following category exists:
+            | name    | id |
+            | Sport   | 1  |
+            | Weather | 2  |
+        And I visit the landing page
         And I click on 'New article'
 
     Scenario: Journalist can create article
