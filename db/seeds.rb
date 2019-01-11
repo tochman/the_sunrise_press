@@ -1,3 +1,6 @@
+Article.destroy_all
+Category.destroy_all
+
 Category.create(name: 'Weather')
 Category.create(name: 'Sport')
 
