@@ -1,0 +1,32 @@
+= form_with model: Article.new do | form |
+    - if @article.errors.any?
+        #error_explanation
+            %h2
+                = pluralize(@article.errors.count, "error")
+                prohibited
+                this article from being saved:
+            %ul
+                - @article.errors.full_messages.each do |msg|
+                    %li= msg
+    %p
+        = form.label :title
+        %br/
+        = form.text_field :title
+    %p
+        = form.label :description
+        %br/
+        = form.text_field :description
+    %p
+        = form.label :content
+        %br/
+        = form.text_field :content
+    %p
+        = form.label :journalist
+        %br/
+        = form.text_field :journalist
+    %p
+        = form.label :category
+        %br/
+        = form.collection_select :category_id, @categories, :id, :name
+    %p
+        = form.submit "Save Article"
