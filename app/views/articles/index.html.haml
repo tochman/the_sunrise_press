@@ -2,4 +2,5 @@
     %div{id: dom_id(article)}
         %h1= article.title
         %h3= article.description
+        %h4= article.category.name
         = link_to "Read more", article_path(article)
