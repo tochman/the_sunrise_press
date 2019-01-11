@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :category do
-    name { "MyString" }
-    article { nil }
+    name { "Weather" }
   end
 end

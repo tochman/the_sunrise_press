@@ -15,6 +15,10 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of :journalist } 
   end
 
+  describe 'Associations' do
+    it { should belong_to(:category) }
+  end
+
   describe 'Factory' do
     it 'should have valid Factory' do
       expect(FactoryBot.create(:article)).to be_valid
