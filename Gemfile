@@ -28,6 +28,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
 end
 
 group :development do

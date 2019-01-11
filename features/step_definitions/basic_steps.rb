@@ -14,10 +14,6 @@ Given("the following user exists") do |table|
     end 
 end
 
-Given("I visit the page") do
-    visit root_path
-end
-
 Given("I click {string}") do |string|
     click_on string
 end
