@@ -1,5 +1,5 @@
 - @articles.each do |article|
-    %h1= article.title
-    %p= "Writen by #{article.journalist}"
-    %h3= article.description
-    %p= article.content
+    %div{id: dom_id(article)}
+        %h1= article.title
+        %h3= article.description
+        = link_to "Read more", article_path(article)
