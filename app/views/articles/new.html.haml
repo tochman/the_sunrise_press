@@ -1,24 +1,26 @@
-= form_with model: @article  do | form |
-    = notice || alert
-    %p
-        = form.label :title
-        %br/
-        = form.text_field :title
-    %p
-        = form.label :description
-        %br/
-        = form.text_field :description
-    %p
-        = form.label :content
-        %br/
-        = form.text_field :content
-    %p
-        = form.label :journalist
-        %br/
-        = form.text_field :journalist
-    %p
-        = form.label :category_id
-        %br/
-        = form.collection_select :category_id, @categories, :id, :name
-    %p
-        = form.submit 'Save Article'
+.flex.flex-wrap.justify-center
+    .m-8.w-33.border-2.shadow.text-center.p-4
+        = form_with model: @article  do | form |
+            = notice || alert
+            %p
+                = form.label :title
+                %br/
+                = form.text_field :title, {class: 'form'}
+            %p
+                = form.label :description
+                %br/
+                = form.text_field :description, {class: 'form'}
+            %p
+                = form.label :content
+                %br/
+                = form.text_field :content, {class: 'form'}
+            %p
+                = form.label :journalist
+                %br/
+                = form.text_field :journalist, {class: 'form'}
+            %p
+                = form.label :category_id
+                %br/
+                = form.collection_select :category_id, @categories, :id, :name, {class: 'form'}
+            %p
+                = form.submit 'Save Article' , {class: 'form-buttom'}

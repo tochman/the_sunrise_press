@@ -28,3 +28,13 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.form {
+    background-color: lightgray;
+    margin: 6px;
+}
+
+.form-buttom {
+    background-color: orange;
+    margin: 6px;
+}
