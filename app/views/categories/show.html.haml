@@ -1,4 +1,6 @@
--@category.articles.each do |article|
-    %h1= article.title
-    %h3= article.description
-    = link_to "Read more", article_path(article)
+.flex.flex-wrap.justify-center
+    -@category.articles.each do |article|
+        .m-8.w-33.h-min-33.border-2.shadow.text-center
+            = link_to "#{article.title}", article_path(article), {class: 'main'}
+            %h3= article.description
+            = link_to "Read more", article_path(article)
