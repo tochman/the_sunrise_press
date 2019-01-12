@@ -8,10 +8,13 @@
 .main{
     text-decoration: none;
     font-size: x-large;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     color: black;
     font-weight: 900;
     font-size: 1.5em;
+}
+.main:hover{
+    color:#ffbe76;
 }
 .main::after {
     content: ' ';
@@ -21,7 +24,6 @@
     box-shadow: 30px;
     height: 2px;
     width: auto;
-    margin-bottom: 15px;
 }
 
 .article {

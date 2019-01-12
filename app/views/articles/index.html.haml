@@ -1,6 +1,6 @@
 .flex.flex-wrap.justify-center
     - @articles.each do |article|
-        %div.m-8.w-33.h-min-33.border-2.shadow.text-center{id: dom_id(article)}
+        %div.m-8.w-33p.shadow-inner.p-4.flex.flex-col.justify-between{id: dom_id(article)}
             = link_to "#{article.title}", article_path(article), {class: 'main'}
-            %h3.example= article.description
-            %h4= article.category.name
+            %h4.mt-4= article.description
+            %p.border.rounded-full.w-33p.text-center.bg-grey-lightest.text-xs.mt-4= article.category.name
