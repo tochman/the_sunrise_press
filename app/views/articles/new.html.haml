@@ -17,8 +17,8 @@
         %br/
         = form.text_field :journalist
     %p
-        = form.label :category
+        = form.label :category_id
         %br/
         = form.collection_select :category_id, @categories, :id, :name
     %p
-        = form.submit "Save Article"
+        = form.submit 'Save Article'

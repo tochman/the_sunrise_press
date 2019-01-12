@@ -6,9 +6,9 @@ Feature: Journalist can create article
 
     Background: 
         Given the following category exists:
-            | name    | id |
-            | Sport   | 1  |
-            | Weather | 2  |
+            | name    |
+            | Sport   |
+            | Weather |
         And I visit the landing page
         And I click on 'New article'
 
@@ -17,7 +17,7 @@ Feature: Journalist can create article
         And I fill in 'Description' field with 'This is a description'
         And I fill in 'Content' field with 'This is my article about the sunny weather'
         And I fill in 'Journalist' field with 'Johanna'
-        And I select 'Weather' from Category
+        And I select 'Weather' from 'Category'
         And I click on 'Save Article'
         Then I should see 'My article'
         And I should see 'Johanna'

@@ -13,12 +13,12 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = Article.new(article_params)
+        @article = Article.create(article_params)
         @article.update(category: find_category)
-        if @article.save
+        if @article.persisted?
             redirect_to article_path(@article)
         else
-            redirect_to new_article_path, notice: "Every field needs to be filled in!"
+            redirect_to new_article_path, notice: 'Every field needs to be filled in!'
         end
     end
 
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
     end
 
     def find_category
-        Category.find_by(id: params[:article][:category_id])
+        Category.find(params[:article][:category_id])
     end
 
 end
