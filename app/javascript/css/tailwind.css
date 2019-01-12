@@ -22,5 +22,9 @@
     height: 2px;
     width: auto;
     margin-bottom: 15px;
+}
 
+.article {
+    margin-left: 10%;
+    margin-right: 10%;
 }
