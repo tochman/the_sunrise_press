@@ -3,3 +3,24 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+.main{
+    text-decoration: none;
+    font-size: x-large;
+    letter-spacing: 5px;
+    color: black;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+.main::after {
+    content: ' ';
+    background: lightgray;
+    display: block;
+    border: #f7f1e3,1px,solid;
+    box-shadow: 30px;
+    height: 2px;
+    width: auto;
+    margin-bottom: 15px;
+
+}

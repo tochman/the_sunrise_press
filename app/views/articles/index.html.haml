@@ -1,6 +1,6 @@
-- @articles.each do |article|
-    %div{id: dom_id(article)}
-        %h1= article.title
-        %h3= article.description
-        %h4= article.category.name
-        = link_to "Read more", article_path(article)
+.flex.flex-wrap
+    - @articles.each do |article|
+        %div.m-8.w-33.h-min-33.border-2.shadow.text-center{id: dom_id(article)}
+            = link_to "#{article.title}", article_path(article), {class: 'main'}
+            %h3.example= article.description
+            %h4= article.category.name
