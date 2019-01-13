@@ -1,5 +1,5 @@
 .flex.flex-wrap.justify-center
-    .m-8.w-33.border-2.shadow.text-center.p-4
+    .m-8.w-auto.border-2.shadow.text-center.p-4.rounded-lg
         = form_with model: @article  do | form |
             = notice || alert
             %p
@@ -13,7 +13,7 @@
             %p
                 = form.label :content
                 %br/
-                = form.text_field :content, {class: 'form'}
+                = form.text_area :content, {class: 'form'}
             %p
                 = form.label :journalist
                 %br/
@@ -23,4 +23,4 @@
                 %br/
                 = form.collection_select :category_id, @categories, :id, :name, {class: 'form'}
             %p
-                = form.submit 'Save Article' , {class: 'form-buttom'}
+                = form.submit 'Save Article' , {class: 'form-button'}

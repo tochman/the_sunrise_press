@@ -7,36 +7,24 @@
 
 .main{
     text-decoration: none;
-    font-size: x-large;
     letter-spacing: 2px;
     color: black;
     font-weight: 900;
-    font-size: 1.5em;
+    font-size: 1.8em;
+    border-bottom: 1px lightgray solid;
+
 }
 .main:hover{
     color:#ffbe76;
 }
-.main::after {
-    content: ' ';
-    background: lightgray;
-    display: block;
-    border: #f7f1e3,1px,solid;
-    box-shadow: 30px;
-    height: 2px;
-    width: auto;
-}
 
-.article {
-    margin-left: 10%;
-    margin-right: 10%;
-}
 
 .form {
     background-color: lightgray;
     margin: 6px;
 }
 
-.form-buttom {
+.form-button {
     background-color: orange;
     margin: 6px;
 }
