@@ -1,4 +1,4 @@
-class Journalist::ArticlesController < ApplicationController
+class ContentManagement::ArticlesController < ApplicationController
 
     def new
         @article = Article.new
@@ -10,7 +10,7 @@ class Journalist::ArticlesController < ApplicationController
         if @article.persisted?
             redirect_to article_path(@article)
         else
-            redirect_to new_journalist_article_path, notice: 'Every field needs to be filled in!'
+            redirect_to new_content_management_article_path, notice: 'Every field needs to be filled in!'
         end
     end
 
@@ -24,7 +24,7 @@ class Journalist::ArticlesController < ApplicationController
         if @article.update(article_params.merge(category: find_category))
             redirect_to article_path(@article), notice: 'Updated successfully!'
         else
-            redirect_to edit_journalist_article_path, notice: 'Every field needs to be filled in!'
+            redirect_to edit_content_management_article_path, notice: 'Every field needs to be filled in!'
         end
     end
 

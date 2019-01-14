@@ -1,6 +1,6 @@
 .flex.flex-wrap.justify-center
     .m-8.w-auto.border-2.shadow.text-center.p-4.rounded-lg
-        = form_with model: @article, url: journalist_articles_path do | form |
+        = form_with model: @article, url: content_management_articles_path do | form |
             = notice || alert
             %p
                 = form.label :title
