@@ -5,14 +5,19 @@ Feature: Visitor can see articles in categories
     I would like to see news sorted in categories
 
     Background:
-        Given the following category exists:
+        Given the following user exists
+            | name | email          | password | password_confirmation | role       | id |
+            | Bill | bill@email.com | password | password              | journalist | 1  |
+
+        And the following category exists:
             | name    | id |
             | Sport   | 1  |
             | Weather | 2  |
-        Given the following article exists:
-            | title   | description         | content                      | journalist | category_id |
-            | News    | This is a news      | I like to eat cheese!        | Jon        | 1           |
-            | Article | This is an article  | I do not like to eat cheese! | Greg       | 2           |
+
+        And the following article exists:
+            | title   | description        | content                      | user_id | category_id |
+            | News    | This is a news     | I like to eat cheese!        | 1       | 1           |
+            | Article | This is an article | I do not like to eat cheese! | 1       | 2           |
         And I visit the landing page
 
     Scenario: Visitor can see based on categories

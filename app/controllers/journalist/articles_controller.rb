@@ -6,7 +6,7 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     def create
-        @article = Article.create(article_params.merge(category: find_category).merge(user_id: current_user))
+        @article = Article.create(article_params.merge(category: find_category).merge(user_id: current_user.id))
         if @article.persisted?
             redirect_to article_path(@article)
         else

@@ -6,8 +6,8 @@ Feature: Journalist can create article
 
     Background:
         Given the following user exists
-            | email          | password | password_confirmation | role       |
-            | bill@email.com | password | password              | journalist |
+            | name | email          | password | password_confirmation | role       | id |
+            | Bill | bill@email.com | password | password              | journalist | 1  |
 
         And the following category exists:
             | name    |
@@ -20,11 +20,10 @@ Feature: Journalist can create article
         Given I fill in 'Title' field with 'My article'
         And I fill in 'Description' field with 'This is a description'
         And I fill in 'Content' field with 'This is my article about the sunny weather'
-        And I fill in 'Journalist' field with 'Johanna'
         And I select 'Weather' from 'Category'
         And I click on 'Save Article'
         Then I should see 'My article'
-        And I should see 'Johanna'
+        And I should see 'Bill'
         And I should see 'This is my article about the sunny weather'
 
     Scenario: Journalist fills out New article form unsuccessfully

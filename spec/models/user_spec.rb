@@ -23,4 +23,8 @@ RSpec.describe User, type: :model do
       expect(create(:journalist)).to be_valid
     end
   end
+
+  describe 'Associations' do
+    it { should have_many(:articles) }
+  end
 end

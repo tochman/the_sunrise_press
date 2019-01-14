@@ -5,5 +5,6 @@ FactoryBot.define do
     content { 'As I told you, that is it' }
     journalist { 'Jon' }
     category
+    user
   end
 end
