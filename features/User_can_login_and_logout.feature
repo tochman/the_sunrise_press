@@ -23,8 +23,6 @@ Feature: User can login and logout
         Then I should see 'Invalid Email or password.'
 
     Scenario: When I am logged in, I should be able to logout
-        Given I fill in 'Email' field with 'bill@email.com'
-        And I fill in 'Password' field with 'password'
-        And I click on 'Log in'
+        Given I am logged in as 'bill@email.com'
         And I click on 'Logout'
         Then I should see 'Signed out successfully.'

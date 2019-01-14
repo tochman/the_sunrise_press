@@ -14,11 +14,11 @@ Feature: Visitor can read a specific article
 
     Scenario: Visitor can see specific article
         And I should see 'News'
+        And I should see 'This is a news'
         And I should see 'I like to eat cheese!'
         And I should see 'Jon'
 
     Scenario: Visitor can navigate back to the landing page
         Then I click on logo
         And I should see 'News'
-        Then show me the page
         And I should see 'This is an article'
