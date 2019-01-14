@@ -19,6 +19,12 @@ Given('I click on {string}') do |link|
     click_on link
 end
 
+Given('the following user exists') do |table|
+    table.hashes.each do |user|
+        FactoryBot.create(:user, user)
+    end 
+end
+
 Given('I click {string} within {string}') do |element, card|
     selected_card = card.split.first
     article = Article.find_by(title: selected_card)
