@@ -17,5 +17,13 @@ Feature: User can login and logout
         And I click 'Log in'
         Then I should see 'Signed in successfully.'
 
+    Scenario: When I fill in the login form incorrectly, I get an error
+        Given I click 'Log in'
+        Then I should see 'Invalid Email or password.'
 
-
+    Scenario: When I am logged in, I should be able to logout
+        Given I fill in 'Email' field with 'bill@email.com'
+        And I fill in 'Password' field with 'password'
+        And I click 'Log in'
+        And I click 'Logout'
+        Then I should see 'Signed out successfully.'
