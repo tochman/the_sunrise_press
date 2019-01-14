@@ -1,13 +1,29 @@
-*
-    box-sizing: border-box
-    margin: 0
-    padding: 0
+// imports fonts
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px')
+@import url('https://fonts.googleapis.com/css?family=Oswald')
+    
+#logo
+    height: 100px
+    padding-left: 20px
+    margin-top: 10px
+
+ul
+    border-bottom: 1px solid black
+    border-top: 1px solid black
+
+.category-item
+    color: black
+    font-family: Slabo27px
+    font-size: 20px
+    line-height: 4rem
+    text-decoration: none
+    transition: all .2s
+
+.category-item:hover
+    color: red
 
 .sunrise
-    background: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .4)), url('sunset.jpg')
-    background-image: cover
-    background-position-y: 20%
-    background-position-x: 30%
-
-#logo
-    margin-left: 20px
+    background: linear-gradient(to right, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url('sunset.jpg')
+    background-size: cover
+    background-position-y: 25%
+    filter: grayscale(60%)
