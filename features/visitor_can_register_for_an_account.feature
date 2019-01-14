@@ -23,14 +23,14 @@ Feature: Visitor can register for an account
         And I fill in 'Password' field with 'hello'
         And I fill in 'Password confirmation' field with 'hello'
         And I click 'Sign up'
-        And I should see 'Password is too short (minimum is 6 characters)'
+        Then I should see 'Password is too short (minimum is 6 characters)'
 
     Scenario: When password confirmation doesn't match password, I get an error message
         Given I fill in 'Email' field with 'bill@email.com'
         And I fill in 'Password' field with 'password'
         And I fill in 'Password confirmation' field with 'pasword'
         And I click 'Sign up'
-        And I should see "Password confirmation doesn't match Password"
+        Then I should see "Password confirmation doesn't match Password"
 
     Scenario: When Email is taken I get an error message
         Given I fill in 'Email' field with 'bill@email.com'

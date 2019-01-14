@@ -15,7 +15,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'webpacker', '~> 3.5'
 gem 'tailwindcss', '~> 0.2.0'
-gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'haml-rails', '~> 1.0'
 
 group :development, :test do
