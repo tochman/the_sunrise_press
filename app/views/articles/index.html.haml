@@ -3,4 +3,4 @@
         %div.m-8.w-33p.shadow-inner.p-4.flex.flex-col.justify-between{id: dom_id(article)}
             = link_to "#{article.title}", article_path(article), {class: 'main'}
             %h4.mt-8= article.description
-            %p.border.rounded-full.w-33p.text-center.bg-grey-lightest.text-xs.mt-4= article.category.name
+            .button.text-center.ml-32.mr-32.mt-4= article.category.name
