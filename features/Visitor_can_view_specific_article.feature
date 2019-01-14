@@ -21,4 +21,4 @@ Feature: Visitor can read a specific article
     Scenario: Visitor can navigate back to the landing page
         Then I click on logo
         And I should see 'News'
-        And I should see 'This is an article'
+        And I should see 'This is a news'
