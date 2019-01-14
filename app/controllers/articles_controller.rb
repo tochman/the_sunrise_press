@@ -13,8 +13,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = Article.create(article_params)
-        @article.update(category: find_category)
+        @article = Article.create(article_params.merge(category: find_category))
         if @article.persisted?
             redirect_to article_path(@article)
         else
