@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root controller: :articles, action: :index
+  devise_for :users
+
   resources :articles, only: [:index, :show]
+
+  root controller: :articles, action: :index
+  
   resources :categories, only: [:show]
 end

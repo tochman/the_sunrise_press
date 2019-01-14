@@ -16,7 +16,7 @@ Feature: Visitor can see articles in categories
         And I visit the landing page
 
     Scenario: Visitor can see based on categories
-        When I click on 'Weather'
+        When I click 'Weather'
         Then I should see 'Article'
         And I should see 'This is an article'
         And I should not see 'News'
