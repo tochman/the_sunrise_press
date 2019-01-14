@@ -4,12 +4,16 @@ Feature: Journalist can create article
     In order to write articles
     I would like to be able to have an article creation form
 
-    Background: 
-        Given the following category exists:
+    Background:
+        Given the following user exists
+            | email          | password | password_confirmation | role       |
+            | bill@email.com | password | password              | journalist |
+
+        And the following category exists:
             | name    |
             | Sport   |
             | Weather |
-        And I visit the landing page
+        And I am logged in as 'bill@email.com'
         And I click on 'New article'
 
     Scenario: Journalist can create article
@@ -22,7 +26,7 @@ Feature: Journalist can create article
         Then I should see 'My article'
         And I should see 'Johanna'
         And I should see 'This is my article about the sunny weather'
-    
-    Scenario: Journalist fills out New article form unsuccessfully 
+
+    Scenario: Journalist fills out New article form unsuccessfully
         When I click on 'Save Article'
         Then I should see 'Every field needs to be filled in!'

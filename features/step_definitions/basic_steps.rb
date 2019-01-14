@@ -41,3 +41,9 @@ end
 Given('I select {string} from {string}') do |option, selector|
     select option, from: selector
 end
+
+Given('I am logged in as {string}') do |email|
+    @user = User.find_by email: email
+    login_as @user, scope: :user
+    visit root_path
+end
