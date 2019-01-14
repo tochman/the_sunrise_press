@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_01_11_091312) do
-=======
 ActiveRecord::Schema.define(version: 2019_01_14_093813) do
->>>>>>> 5ffa3047ca58e6183ddd5dc9f834816d97930233
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
@@ -44,11 +41,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_093813) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.string "name"
-=======
     t.integer "role", default: 0
->>>>>>> 5ffa3047ca58e6183ddd5dc9f834816d97930233
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
