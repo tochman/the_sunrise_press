@@ -1,8 +1,12 @@
-= notice || alert
-=link_to 'The Sunrise Press', root_path
+%nav.flex.items-center.justify-between.flex-wrap.sunrise
+    .text-sm.lg:flex-grow.flex.justify-start.text-black.no-underline
+        = image_tag 'logo.png', id: 'logo'
 
--if user_signed_in?
-    =link_to 'Logout', destroy_user_session_path, method: :delete
--else
-    =link_to 'Register', new_user_registration_path
-    =link_to 'Login', new_user_session_path
+        = notice || alert
+
+
+    -if user_signed_in?
+        =link_to 'Logout', destroy_user_session_path, method: :delete
+    -else
+        =link_to 'Register', new_user_registration_path
+        =link_to 'Login', new_user_session_path
