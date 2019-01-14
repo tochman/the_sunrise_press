@@ -4,4 +4,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   enum role: {member: 0, journalist: 1}
+  has_many :articles
 end

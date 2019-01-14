@@ -18,7 +18,8 @@ Feature: Journalist can create article
             | News    | This is a news     | I like to eat cheese!        | Jon        | 1           |
             | Article | This is an article | I do not like to eat cheese! | Greg       | 2           |
         And I am logged in as 'bill@email.com'
-        And I click 'Update article' within 'News'
+        And I click on 'News'
+        And I click on 'Update article' within 'News'
 
     Scenario: Journalist can update article
         Given I fill in 'Title' field with 'My article'
