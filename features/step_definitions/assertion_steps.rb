@@ -8,4 +8,8 @@ end
 
 Then('show me the page') do
     save_and_open_page
-end 
+end
+
+Then('I click on logo') do
+    find('#logo').click
+end
