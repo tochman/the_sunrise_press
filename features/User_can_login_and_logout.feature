@@ -9,21 +9,22 @@ Feature: User can login and logout
         | email          | password |  
         | bill@email.com | password | 
         Given I visit the landing page
-        And I click 'Login'
+        Then show me the page
+        And I click on 'Login'
 
     Scenario: When I fill in the login form correctly, I can login
         Given I fill in 'Email' field with 'bill@email.com'
         And I fill in 'Password' field with 'password'
-        And I click 'Log in'
+        And I click on 'Log in'
         Then I should see 'Signed in successfully.'
 
     Scenario: When I fill in the login form incorrectly, I get an error
-        Given I click 'Log in'
+        Given I click on 'Log in'
         Then I should see 'Invalid Email or password.'
 
     Scenario: When I am logged in, I should be able to logout
         Given I fill in 'Email' field with 'bill@email.com'
         And I fill in 'Password' field with 'password'
-        And I click 'Log in'
-        And I click 'Logout'
+        And I click on 'Log in'
+        And I click on 'Logout'
         Then I should see 'Signed out successfully.'

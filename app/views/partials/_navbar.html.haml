@@ -1,11 +1,13 @@
 %nav.flex.items-center.justify-between.flex-wrap.sunrise
+    = notice || alert
     .text-sm.lg:flex-grow.flex.justify-start.text-black.no-underline
-        =link_to image_tag('logo.png',{id: 'logo' }), root_path
+        = image_tag 'logo.png', id: 'logo'
 
--if user_signed_in?
-    =link_to 'Logout', destroy_user_session_path, method: :delete
-    -if current_user.role == 'journalist'
-        =link_to 'New article', new_journalist_article_path
--else
-    =link_to 'Register', new_user_registration_path
-    =link_to 'Login'
+    - if user_signed_in?
+        %button.bg-white.hover:bg-grey-lightest.text-grey-darkest.font-semibold.py-2.px-4.border.border-grey-light.rounded.shadow.mr-8
+        = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-black no-underline'
+    - else
+        %button.bg-white.hover:bg-grey-lightest.text-grey-darkest.font-semibold.py-2.px-4.border.border-grey-light.rounded.shadow.mr-8
+            = link_to 'Register', new_user_registration_path, class: 'text-black no-underline'
+        %button.bg-white.hover:bg-grey-lightest.text-grey-darkest.font-semibold.py-2.px-4.border.border-grey-light.rounded.shadow.mr-8
+            = link_to 'Login', new_user_session_path, class: 'text-black no-underline'
