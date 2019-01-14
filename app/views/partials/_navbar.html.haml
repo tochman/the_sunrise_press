@@ -1,6 +1,6 @@
 %nav.flex.items-center.justify-between.flex-wrap.sunrise
     .text-sm.lg:flex-grow.flex.justify-start.text-black.no-underline
-        = image_tag 'logo.png', id: 'logo'
+        =link_to image_tag('logo.png',{id: 'logo' }), root_path
 
         = notice || alert
 
