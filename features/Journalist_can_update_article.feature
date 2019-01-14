@@ -28,6 +28,7 @@ Feature: Journalist can create article
         And I fill in 'Content' field with 'This is my article about the sunny weather'
         And I select 'Weather' from 'Category'
         And I click on 'Save Article'
-        Then I should see 'My article'
+        Then I should see 'Updated successfully!'
+        And I should see 'My article'
         And I should see 'Bill'
         And I should see 'This is my article about the sunny weather'
