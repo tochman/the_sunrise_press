@@ -6,8 +6,8 @@ Feature: Journalist can create article
 
     Background:
         Given the following user exists
-            | name | email          | password | password_confirmation | role       | id |
-            | Bill | bill@email.com | password | password              | journalist | 1  |
+            | name | email          | password | password_confirmation | role       |
+            | Bill | bill@email.com | password | password              | journalist |
 
         And the following category exists:
             | name    |
