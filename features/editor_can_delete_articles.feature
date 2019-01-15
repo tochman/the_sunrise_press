@@ -17,5 +17,4 @@ Feature: Editor can delete articles
         And I click on "It's a win"
         Then show me the page
         And I click on 'Delete article'
-        # go back to root page
         Then I should not see "It's a win"
