@@ -36,6 +36,12 @@ class ContentManagement::ArticlesController < ApplicationController
         end
     end
 
+    def publish_article
+        @article = Article.find(params[:id])
+        @article.update_attribute(:published, true)
+        redirect_to content_management_articles_path
+    end
+
     private
     def article_params
         params.require(:article).permit(:title, :description, :content, :journalist)
@@ -44,4 +50,5 @@ class ContentManagement::ArticlesController < ApplicationController
     def find_category
         Category.find(params[:article][:category_id])
     end
+    
 end

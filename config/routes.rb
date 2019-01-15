@@ -5,6 +5,12 @@ Rails.application.routes.draw do
     resources :articles, only: [:new, :create, :edit, :update, :index, :show]
   end
 
+  namespace :content_management do
+    resources :articles do
+      patch :publish_article, on: :member
+    end
+  end
+  
   devise_for :users  
   resources :categories, only: [:show]
 end
