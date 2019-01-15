@@ -1,8 +1,8 @@
-%h1 Non published articles
-.nonpublished
+%h1 Publised articles
+.published
     -@articles = Article.all
     -@articles.each do |article|
-        -if article.published == false
+        -if article.published == true
             %div{id: dom_id(article)}
                 %h1= article.title
                 %h4.mt-8= article.description
