@@ -13,6 +13,8 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to :member? }
     it { is_expected.to respond_to :journalist! }
     it { is_expected.to respond_to :journalist? }
+    it { is_expected.to respond_to :editor! }
+    it { is_expected.to respond_to :editor? }
   end
 
   describe 'FactoryBot' do
@@ -21,6 +23,9 @@ RSpec.describe User, type: :model do
     end
     it 'for journalist is valid' do
       expect(create(:journalist)).to be_valid
+    end
+    it 'for editor is valid' do
+      expect(create(:editor)).to be_valid
     end
   end
 
