@@ -1,7 +1,6 @@
 class ContentManagement::ArticlesController < ApplicationController
 
     def index
-        
     end
 
     def show
@@ -42,7 +41,9 @@ class ContentManagement::ArticlesController < ApplicationController
         redirect_to content_management_articles_path
     end
 
+
     private
+
     def article_params
         params.require(:article).permit(:title, :description, :content, :journalist)
     end

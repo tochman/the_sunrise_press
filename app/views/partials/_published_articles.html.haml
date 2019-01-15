@@ -1,11 +1,11 @@
-%h1 Publised articles
-.published
+%h1.m-4 Publised articles
+.published.flex.flex-wrap
     -@articles = Article.all
     -@articles.each do |article|
         -if article.published == true
-            %div{id: dom_id(article)}
+            %div.border-2.bg-grey-lightest.m-4.p-4.w-33p{id: dom_id(article)}
                 %h1= article.title
-                %h4.mt-8= article.description
-                %p.border.rounded-full.w-33p.text-center.bg-grey-lightest.text-xs.mt-4= article.category.name
-                %p.m-4= "Written by #{article.user.name}"
+                %h4= article.description
+                %p= article.category.name
+                %p= "Written by #{article.user.name}"
                 =link_to 'Review', content_management_article_path(article)
