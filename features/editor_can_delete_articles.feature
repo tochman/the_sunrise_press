@@ -14,7 +14,7 @@ Feature: Editor can delete articles
 
     Scenario: Editor can delete article
         Given I am logged in as 'jim@email.com'
-        And I click on "It's a win"
+        And I click on 'It\'s a win'
         Then show me the page
         And I click on 'Delete article'
-        Then I should not see "It's a win"
+        Then I should not see 'It\'s a win'
