@@ -4,7 +4,7 @@
     -@articles.each do |article|
         -if article.published == false
             %div.border-2.bg-grey-lightest.m-4.p-4.w-33p{id: dom_id(article)}
-                %h4= article.title
+                %h2= article.title
                 %h4= article.description
                 %p= article.category.name
                 %p= "Written by #{article.user.name}"
