@@ -6,6 +6,7 @@ RSpec.describe Article, type: :model do
     it { is_expected.to have_db_column :description }
     it { is_expected.to have_db_column :content }
     it { is_expected.to have_db_column :journalist }
+    it { is_expected.to have_db_column :published }
   end
 
   describe 'Validations' do
