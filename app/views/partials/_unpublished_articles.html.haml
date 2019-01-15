@@ -2,7 +2,9 @@
     -@articles = Article.all
     -@articles.each do |article|
         -if article.published == false
-            = link_to "#{article.title}", article_path(article), {class: 'main'}
-            %h4.mt-8= article.description
-            %p.border.rounded-full.w-33p.text-center.bg-grey-lightest.text-xs.mt-4= article.category.name
-            %p.m-4= "Writen by #{article.user.name}"
+            %div{id: dom_id(article)}
+                %h1= article.title
+                %h4.mt-8= article.description
+                %p.border.rounded-full.w-33p.text-center.bg-grey-lightest.text-xs.mt-4= article.category.name
+                %p.m-4= "Writen by #{article.user.name}"
+                =link_to 'Review', root_path

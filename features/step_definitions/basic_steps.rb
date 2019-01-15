@@ -50,3 +50,11 @@ Given('I am logged in as {string}') do |email|
     login_as @user, scope: :user
     visit root_path
 end
+
+When("I click on {string} within {string}") do |button, title|
+    article = Article.find_by(title: title)
+    dom_section = "#article_#{article.id}" 
+    within(dom_section) do 
+        click_on button
+    end
+end

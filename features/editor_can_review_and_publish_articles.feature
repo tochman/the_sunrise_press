@@ -22,7 +22,7 @@ Feature: Editor can review and publish articles
         And I should see 'This is an article' within 'unpublished'
 
     Scenario: Editor can review articles
-        Given I click on 'Review article'
+        Given I click on 'Review' within 'News'
         Then I should see 'News'
         And I should see 'I like to eat cheese!'
         And I should see 'Written by Bill'
