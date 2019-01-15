@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root controller: :articles, action: :index
   resources :articles, only: [:index, :show]
   namespace :content_management do
-    resources :articles, only: [:new, :create, :edit, :update, :index]
+    resources :articles, only: [:new, :create, :edit, :update, :index, :show]
   end
 
   devise_for :users  

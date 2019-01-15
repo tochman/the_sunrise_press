@@ -6,5 +6,5 @@
                 %h1= article.title
                 %h4.mt-8= article.description
                 %p.border.rounded-full.w-33p.text-center.bg-grey-lightest.text-xs.mt-4= article.category.name
-                %p.m-4= "Writen by #{article.user.name}"
-                =link_to 'Review', root_path
+                %p.m-4= "Written by #{article.user.name}"
+                =link_to 'Review', content_management_article_path(article)
