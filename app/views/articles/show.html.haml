@@ -9,4 +9,4 @@
 
     - if user_signed_in?
         - if current_user.role == 'editor'
-            = link_to 'Delete article', content_management_article_path(@article), method: 'destroy'
+            = link_to 'Delete article', content_management_article_path(@article), method: :delete
