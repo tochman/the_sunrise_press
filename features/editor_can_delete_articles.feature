@@ -6,8 +6,8 @@ Feature: Editor can delete articles
 
     Background:
         Given the following user exists
-            | name | email         | password | role   |
-            | Jim  | jim@email.com | password | editor |
+            | name | email         | password | role |
+            | Jim  | jim@email.com | password | 2    |
         And the following article exists:
             | title      | description     | content        | user_id | category_id |
             | It's a win | Local team wins | We didn't lose | Jim     | Sports      |
