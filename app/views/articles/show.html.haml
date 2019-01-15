@@ -7,8 +7,7 @@
         - if current_user == @article.user
             = link_to 'Edit', edit_content_management_article_path(@article)
 
-- if user_signed_in?
-    - if current_user.role == 'editor'
-        .flex.justify-center
-            .button.bg-white.hover:bg-grey-lightest.text-grey-darkest.font-semibold.py-2.px-4.border.border-grey-light.rounded.shadow
-                = link_to 'Delete article', content_management_article_path(@article), method: :delete, class: 'text-black no-underline'
+- if user_signed_in? && current_user.role == 'editor'
+    .flex.justify-center
+        .button.bg-white.hover:bg-grey-lightest.text-grey-darkest.font-semibold.py-2.px-4.border.border-grey-light.rounded.shadow
+            = link_to 'Delete article', content_management_article_path(@article), method: :delete, class: 'text-black no-underline'
