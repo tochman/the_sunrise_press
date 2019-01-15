@@ -1,7 +1,6 @@
 %h1.m-4 Non published articles
 .nonpublished.flex.flex-wrap
-    -@articles = Article.all
-    -@articles.each do |article|
+    -articles.each do |article|
         -if article.published == false
             %div.border-2.bg-grey-lightest.m-4.p-4.w-33p{id: dom_id(article)}
                 %h2= article.title

@@ -21,13 +21,7 @@ Feature: Editor can review and publish articles
         And I should see 'Article' within 'nonpublished'
         And I should see 'This is an article' within 'nonpublished'
 
-    Scenario: Editor can review articles
-        Given I click on 'Review' within 'News'
-        Then I should see 'News'
-        And I should see 'I like to eat cheese!'
-        And I should see 'Written by Bill'
-    
-     Scenario: Editor can approve articles
+    Scenario: Editor can approve articles
         Given I click on 'Review' within 'News'
         When I click on 'Approve'
         Then I should see 'News' within 'published'
