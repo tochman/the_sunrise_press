@@ -13,5 +13,10 @@ FactoryBot.define do
       email { 'mail@mail.com' }
       role { 1 }
     end
+
+    factory :editor do
+      email { 'mail@mail.com' }
+      role { 2 }
+    end
   end
 end

@@ -1,7 +1,12 @@
 .ml-10p.mr-10p.flex.justify-center
     .flex.flex-col.items-center.m-8.text-center
         %h1= @article.title
-        %p.m-4= "Writen by #{@article.user.name}"
+        %p.m-4= "Written by #{@article.user.name}"
+        %p= @article.description
         %p= @article.content
-        -if current_user == @article.user
-            =link_to 'Edit', edit_content_management_article_path(@article)
+        - if current_user == @article.user
+            = link_to 'Edit', edit_content_management_article_path(@article)
+
+    - if user_signed_in?
+        - if current_user.role == 'editor'
+            = link_to 'Delete article', content_management_article(@article), method: destroy
