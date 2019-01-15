@@ -15,8 +15,9 @@ Feature: Editor can review and publish articles
         And I click on 'Articles'
 
     Scenario: Editor can see unpublished articles
-        Then I should see 'News' within 'Unpublished'
-        And I should see 'This is a news' within 'Unpublished'
+        When I click on 'Unpublished articles'
+        Then I should see 'News' 
+        And I should see 'This is a news'
 
     Scenario: Editor can review articles
         Given I click on 'Review article'
