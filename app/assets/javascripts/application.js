@@ -14,11 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
-document.addEventListener('turbolinks:load', ()=> {
-    let publishIt = () => {
-        self.publised = true;
-    }
-    document.getElementById('publish').addEventListener('click', publishIt())
-
-})
