@@ -12,11 +12,11 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of :title }
     it { is_expected.to validate_presence_of :description } 
     it { is_expected.to validate_presence_of :content } 
-    it { is_expected.to validate_presence_of :journalist } 
   end
 
   describe 'Associations' do
     it { should belong_to(:category) }
+    it { should belong_to(:user) }
   end
 
   describe 'Factory' do

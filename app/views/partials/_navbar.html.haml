@@ -7,7 +7,7 @@
         .button
             = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-black no-underline'
         -if current_user.role == 'journalist'
-            = link_to 'New article', new_journalist_article_path
+            = link_to 'New article', new_content_management_article_path
     - else
         .button
             = link_to 'Register', new_user_registration_path, class: 'text-black no-underline'
