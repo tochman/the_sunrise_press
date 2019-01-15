@@ -9,7 +9,6 @@ Feature: User can login and logout
         | email          | password |  
         | bill@email.com | password | 
         Given I visit the landing page
-        Then show me the page
         And I click on 'Login'
 
     Scenario: When I fill in the login form correctly, I can login

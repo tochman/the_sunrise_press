@@ -2,6 +2,7 @@
     .flex.flex-col.items-center.m-8.text-center
         %h1= @article.title
         %h1= @article.description
-        %p.m-4= "Writen by #{@article.journalist}"
+        %p.m-4= "Writen by #{@article.user.name}"
         %p= @article.content
-    
+        -if current_user == @article.user
+            =link_to 'Edit', edit_content_management_article_path(@article)
