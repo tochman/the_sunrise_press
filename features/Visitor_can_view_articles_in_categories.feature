@@ -10,10 +10,9 @@ Feature: Visitor can see articles in categories
             | Bill | bill@email.com | password | password              | journalist |
 
         And the following article exists:
-            | title   | description        | content                      | user_id | category_id |
-            | News    | This is a news     | I like to eat cheese!        | Bill    | Sport       |
-            | Article | This is an article | I do not like to eat cheese! | Bill    | Weather     |
-            
+            | title   | description        | content                      | user_id | category_id | published |
+            | News    | This is a news     | I like to eat cheese!        | Bill    | Sport       | true      |
+            | Article | This is an article | I do not like to eat cheese! | Bill    | Weather     | true      |
         And I visit the landing page
 
     Scenario: Visitor can see based on categories

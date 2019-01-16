@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
@@ -6,12 +8,13 @@ RSpec.describe Article, type: :model do
     it { is_expected.to have_db_column :description }
     it { is_expected.to have_db_column :content }
     it { is_expected.to have_db_column :journalist }
+    it { is_expected.to have_db_column :published }
   end
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of :title }
-    it { is_expected.to validate_presence_of :description } 
-    it { is_expected.to validate_presence_of :content } 
+    it { is_expected.to validate_presence_of :description }
+    it { is_expected.to validate_presence_of :content }
   end
 
   describe 'Associations' do
@@ -21,8 +24,20 @@ RSpec.describe Article, type: :model do
 
   describe 'Factory' do
     it 'should have valid Factory' do
-      expect(FactoryBot.create(:article)).to be_valid
+      expect(create(:article)).to be_valid
     end
   end
 
+  describe 'Instance methods' do
+    let(:published_article) { create(:article, published: true) }
+    let(:not_published_article) { create(:article, published: false) }
+
+    it 'responds to #not_published?' do 
+      expect(not_published_article.not_published?).to eq true
+    end
+
+    it 'responds to #published?' do 
+      expect(published_article.published?).to eq true
+    end
+  end
 end
