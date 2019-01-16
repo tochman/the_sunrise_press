@@ -1,4 +1,3 @@
-= notice || alert
 %nav.flex.items-center.justify-between.flex-wrap.sunrise
     .text-sm.lg:flex-grow.flex.justify-start.text-black.no-underline
         = link_to image_tag('logo.png', {id: 'logo'}), root_path
@@ -13,3 +12,4 @@
             = link_to 'Register', new_user_registration_path, class: 'text-black no-underline'
         .button
             = link_to 'Login', new_user_session_path, class: 'text-black no-underline'
+    = notice || alert
