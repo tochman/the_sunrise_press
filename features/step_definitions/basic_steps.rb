@@ -72,3 +72,11 @@ end
 Then('show me the page') do
     save_and_open_page
 end
+
+When("I click on {string} within {string}") do |button, title|
+    article = Article.find_by(title: title)
+    dom_section = "#article_#{article.id}" 
+    within(dom_section) do 
+        click_on button
+    end
+end

@@ -9,8 +9,8 @@ Feature: Visitor can view all listed articles
             | name | email          | password | password_confirmation | role       |
             | Bill | bill@email.com | password | password              | journalist |
         And the following article exists:
-            | title | description    | content               | user_id | category_id |
-            | News  | This is a news | I like to eat cheese! | Bill    | Sport       |
+            | title | description    | content               | user_id | category_id | published |
+            | News  | This is a news | I like to eat cheese! | Bill    | Sport       | true      |
 
     Scenario: Visitor can see articles on index page
         Given I visit the landing page
