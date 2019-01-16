@@ -5,8 +5,7 @@ class SubscribersController < ApplicationController
     end
 
     def create
-
-        user = User.find(params[:user_id])
+        user = User.find_by_id(current_user.id)
         customer = Stripe::Customer.create(
             email: user.email,
             source: get_token(params),
@@ -15,7 +14,7 @@ class SubscribersController < ApplicationController
     
         charge = Stripe::Charge.create(
             customer: customer.id,
-            amount: 100,
+            amount: 10000,
             currency: 'SEK',
             description: 'Monthly fee for The Sunrise Press'
         )

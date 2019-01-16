@@ -65,6 +65,10 @@ Then('I fill in the payment form') do
     end
 end
 
+Given("I submit the payment form") do
+    click_on 'Submit Payment'
+end
+
 Then('show me the page') do
     save_and_open_page
 end
