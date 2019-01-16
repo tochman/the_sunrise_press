@@ -67,6 +67,7 @@ end
 
 Given("I submit the payment form") do
     click_on 'Submit Payment'
+    sleep 3
 end
 
 Then('show me the page') do
