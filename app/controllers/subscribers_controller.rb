@@ -21,6 +21,7 @@ class SubscribersController < ApplicationController
     
         if charge[:paid]
             redirect_to root_path, notice: 'Thank you for subscribing The Sunrise Press, the maker of news while making news'
+            user.role = 2
         else
             redirect_to root_path, notice: 'Charge declined'
         end
