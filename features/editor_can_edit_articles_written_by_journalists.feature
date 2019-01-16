@@ -2,7 +2,7 @@ Feature: Editor can edit articles written by journalists
 
     As an editor
     In order to modify an article written by a journalist
-    I would like to be able to edit i
+    I would like to be able to edit it
 
     Background:
         Given the following user exists
