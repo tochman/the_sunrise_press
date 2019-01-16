@@ -7,5 +7,5 @@ Then('I should not see {string}') do |content|
 end
 
 Then("I should see {string} within {string}") do |content, element|
-    page.find(".#{element}").should have_text(content)
+    expect(page.find(".#{element}")).to have_text content 
 end

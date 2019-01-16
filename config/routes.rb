@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   root controller: :articles, action: :index
   resources :articles, only: [:index, :show]
   namespace :content_management do
-    resources :articles, except: :destroy do
-      patch :publish_article, on: :member
-    end
+    resources :articles, except: :destroy 
   end
   
   devise_for :users  
