@@ -8,6 +8,7 @@ Feature: User can login and logout
         Given the following user exists
         | email          | password |  
         | bill@email.com | password | 
+        
         Given I visit the landing page
         And I click on 'Login'
 

@@ -64,7 +64,7 @@ ul {
 }
 
 .sunrise {
-	background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("sunset.jpg");
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('./images/sunset.jpg');
 	background-size: cover;
 	background-position-y: 25%;
 	filter: grayscale(60%);
