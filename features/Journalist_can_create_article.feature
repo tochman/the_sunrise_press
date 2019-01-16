@@ -21,10 +21,12 @@ Feature: Journalist can create article
         And I fill in 'Description' field with 'This is a description'
         And I fill in 'Content' field with 'This is my article about the sunny weather'
         And I select 'Weather' from 'Category'
+        And I attach a file
         And I click on 'Save Article'
         Then I should see 'My article'
         And I should see 'Bill'
         And I should see 'This is my article about the sunny weather'
+        Then show me the page
 
     Scenario: Journalist fills out New article form unsuccessfully
         When I click on 'Save Article'

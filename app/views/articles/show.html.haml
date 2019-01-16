@@ -1,6 +1,8 @@
 .ml-10p.mr-10p.flex.justify-center
     .flex.flex-col.items-center.m-8.text-center
         %h1= @article.title
+        %br
+        = image_tag @article.image
         %p.m-4= "Writen by #{@article.user.name}"
         %p= @article.content
         -if current_user == @article.user

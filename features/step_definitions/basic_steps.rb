@@ -50,3 +50,12 @@ Given('I am logged in as {string}') do |email|
     login_as @user, scope: :user
     visit root_path
 end
+
+And('I attach a file') do 
+    attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
+end
+
+Then('show me the page') do 
+    save_and_open_page
+end
+
