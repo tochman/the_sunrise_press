@@ -13,6 +13,7 @@ Feature: User can buy a subscription
 
     Scenario: User can buy a subscription
         Given I click on 'Subscribe'
+        Then show me the page
         And I fill in the payment form
         And I submit the payment form
         Then I shuld see 'Thank you for subscribing!'

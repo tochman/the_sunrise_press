@@ -64,3 +64,7 @@ Then('I fill in the payment form') do
         find_field('postal').send_keys('11310')
     end
 end
+
+Then('show me the page') do
+    save_and_open_page
+end
