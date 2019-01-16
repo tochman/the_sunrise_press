@@ -2,7 +2,8 @@
 =link_to 'The Sunrise Press', root_path
 
 -if user_signed_in?
-        =link_to 'Subscribe for a Month', new_subscriber_path(current_user)
+        -if current_user.member?
+                =link_to 'Subscribe for a Month', new_subscriber_path(current_user)
         =link_to 'Logout', destroy_user_session_path, method: :delete
         -unless current_user.member?
                 =link_to 'New article', new_content_management_article_path
