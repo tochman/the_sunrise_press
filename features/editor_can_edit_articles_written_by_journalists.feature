@@ -23,4 +23,4 @@ Feature: Editor can edit articles written by journalists
         And I fill in 'Content' field with 'I do not like to eat cheese!'
         And I select 'Sport' from 'Category'
         And I click on 'Save Article'
-        Then I should see 'Article successfully updated'
+        Then I should see 'Updated successfully!'
