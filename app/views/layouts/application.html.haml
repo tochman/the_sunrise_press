@@ -5,12 +5,11 @@
     %title TheSunrisePress
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag    'application'
     = javascript_pack_tag 'application'
     %link{crossorigin: "anonymous", href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", integrity: "sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/", rel: "stylesheet"}/
   %body
     = render partial: 'partials/navbar'
-    = render partial: 'partials/category_navbar'
+    = render partial: 'partials/category_navbar', locals: {categories: @categories}
     = yield

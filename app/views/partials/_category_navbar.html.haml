@@ -1,4 +1,5 @@
-- categories = Category.all 
-- categories.each do |category|
-    %div
-        = link_to category.name, category_path(category)
+%ul.list-reset.flex.justify-around
+    - categories.each do |category|
+        %li
+            %p
+                = link_to category.name, category_path(category), class: 'category-item'

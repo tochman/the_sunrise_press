@@ -19,8 +19,3 @@ Feature: Visitor can read a specific article
         And I should see 'News'
         And I should see 'I like to eat cheese!'
         And I should see 'Bill'
-
-    Scenario: Visitor can navigate back to the landing page
-        Then I click on 'The Sunrise Press'
-        And I should see 'News'
-        And I should see 'This is an article'
