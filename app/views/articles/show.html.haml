@@ -2,7 +2,7 @@
     .flex.flex-col.items-center.m-8.text-center
         %h1= @article.title
         %br
-        = image_tag @article.image
+        = image_tag @article.image.variant(combine_options: {auto_orient: true, gravity: "center", resize: "300x300^", crop: "200x200+0+0"})
         %p.m-4= "Writen by #{@article.user.name}"
         %p= @article.content
         -if current_user == @article.user
