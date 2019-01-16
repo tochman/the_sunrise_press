@@ -1,0 +1,110 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+
+
+.main {
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 900;
+    font-size: 1.8em;
+    border-bottom: 1px lightgray solid;
+
+}
+.main:hover{
+    color:#ffbe76;
+}
+
+
+.form {
+    background-color: lightgray;
+    margin: 6px;
+}
+
+.form-button {
+    background-color: orange;
+    margin: 6px;
+}
+
+* {
+    font-family: Slabo27px;
+    margin: 0;
+    padding: 0;
+	}
+  
+#logo {
+	height: 100px;
+	padding-left: 20px;
+	margin-top: 10px;
+}
+
+ul {
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+}
+
+.category-item {
+	color: black;
+	font-family: Slabo27px;
+	font-size: 20px;
+	line-height: 4rem;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.category-item:hover {
+	color: red;
+}
+
+.sunrise {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('./images/sunset.jpg');
+	background-size: cover;
+	background-position-y: 25%;
+	filter: grayscale(60%);
+}
+
+.button {
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+	color: gray;
+	font-family: Slabo27px;
+	font-weight: bold;
+	margin-right: 20px;
+	padding: 10px 20px 10px 20px;
+	transition: all 0.1s;
+	border: 2px solid lightgray;
+}
+
+.button:hover {
+	background-color: lightgray;
+}
+
+.login {
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+	height: 350px;
+	margin: 70px auto auto auto;
+	text-align: center;
+	width: 300px;
+	}
+.login label {
+	font-size: 20px;
+	line-height: 50px;
+}
+.login input {
+	border: 1px solid black;
+	padding: 10px;
+}
+.login h2 {
+	font-size: 30px;
+	line-height: 60px;
+}
