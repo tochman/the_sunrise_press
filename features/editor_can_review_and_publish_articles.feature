@@ -16,15 +16,15 @@ Feature: Editor can review and publish articles
         And I click on 'Articles'
 
     Scenario: Editor can see nonpublished articles
-        Then I should see 'News' within 'nonpublished'
-        And I should see 'This is a news' within 'nonpublished'
-        And I should see 'Article' within 'nonpublished'
-        And I should see 'This is an article' within 'nonpublished'
+        Then I should see 'News' within 'not_published'
+        And I should see 'This is a news' within 'not_published'
+        And I should see 'Article' within 'not_published'
+        And I should see 'This is an article' within 'not_published'
 
     Scenario: Editor can approve articles
         Given I click on 'Review' within 'News'
         When I click on 'Approve'
         Then I should see 'News' within 'published'
         And I should see 'This is a news' within 'published'
-        And I should see 'Article' within 'nonpublished'
-        And I should see 'This is an article' within 'nonpublished'
+        And I should see 'Article' within 'not_published'
+        And I should see 'This is an article' within 'not_published'
