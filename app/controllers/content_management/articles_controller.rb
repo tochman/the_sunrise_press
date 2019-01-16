@@ -1,5 +1,7 @@
 class ContentManagement::ArticlesController < ApplicationController
 
+    before_action :get_article, only: [:edit, :update]
+
     def new
         @article = Article.new
         @categories = Category.all
@@ -15,12 +17,10 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def edit
-        @article = Article.find(params[:id])
         @categories = Category.all
     end
 
     def update
-        @article = Article.find(params[:id])
         if @article.update(article_params.merge(category: find_category))
             redirect_to article_path(@article), notice: 'Updated successfully!'
         else
@@ -29,6 +29,10 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     private
+    def get_article
+        @article = Article.find(params[:id])
+    end
+
     def article_params
         params.require(:article).permit(:title, :description, :content, :journalist)
     end

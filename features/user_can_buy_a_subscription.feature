@@ -9,6 +9,7 @@ Feature: User can buy a subscription
         Given the following user exists
             | name | email          | password | password_confirmation |
             | Bill | bill@email.com | password | password              |
+            
         And I am logged in as 'bill@email.com'
 
     Scenario: User can buy a subscription

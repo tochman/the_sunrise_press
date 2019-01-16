@@ -30,7 +30,7 @@ const initiateStripe = () => {
     
     const stripe = Stripe('pk_test_QicERB8w3kyqaYW3hUUQylRH');
     const elements = stripe.elements();
-    const card = elements.create('card')
+    const card = elements.create('card', {hidePostalCode: true})
     
     card.mount('#card-element');
 
