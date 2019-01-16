@@ -1,6 +1,14 @@
 class ContentManagement::ArticlesController < ApplicationController
 
-    before_action :get_article, only: [:edit, :update]
+    before_action :get_article, only: [:show, :edit, :update]
+
+    def index
+        @articles = Article.all
+    end
+
+    def show
+        
+    end
 
     def new
         @article = Article.new
@@ -21,8 +29,11 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def update
-        if @article.update(article_params.merge(category: find_category))
-            redirect_to article_path(@article), notice: 'Updated successfully!'
+        if params[:toggle_publish] == 'true'
+            publish_article
+            redirect_to content_management_articles_path
+        elsif @article.update(article_params.merge(category: find_category))
+                redirect_to article_path(@article), notice: 'Updated successfully!'
         else
             redirect_to edit_content_management_article_path, notice: 'Every field needs to be filled in!'
         end
