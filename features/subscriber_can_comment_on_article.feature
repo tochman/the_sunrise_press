@@ -6,19 +6,26 @@ Feature: Subscriber can comment on article
 
     Background:
         Given the following user exists
-            | name | email          | password | role   |
-            | Bill | bill@email.com | password | member |
+            | name    | email             | password | role   |
+            | Bill    | bill@mail.com     | password | member |
+            | Johanna | johanna@email.com | password | member |
 
         And the following article exists:
             | title | description    | content               | user_id | category_id | published |
             | News  | This is a news | I like to eat cheese! | Bill    | Weather     | true      |
 
         And I visit the landing page
-        And I am logged in as 'bill@email.com'
-        And I click on 'News'
 
-    Scenario: Successfully submit a comment
+    Scenario: Logged in user can submit a comment [Happy Path]
+        Given I am logged in as 'johanna@email.com'
+        And I click on 'News'
         And I fill in 'Body' field with 'This is my comment'
         And I click on 'Create Comment'
-        Then I should see 'Bill'
+        Then show me the page
+        Then I should see 'Johanna'
         And I should see 'This is my comment'
+
+    Scenario: Visitor cannot submit a comment [Sad Path]
+        Given I click on 'News'
+        Then I should not see 'Body'
+        And I should not see 'Create Comment'
