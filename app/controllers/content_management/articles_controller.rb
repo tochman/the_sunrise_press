@@ -49,7 +49,7 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :description, :content, :journalist)
+        params.require(:article).permit(:title, :description, :content, :journalist, :image)
     end
 
     def find_category

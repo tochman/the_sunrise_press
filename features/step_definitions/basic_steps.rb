@@ -79,3 +79,7 @@ When("I click on {string} within {string}") do |button, title|
         click_on button
     end
 end
+
+Given("I attach a file") do
+    attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
+end
