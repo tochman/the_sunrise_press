@@ -2,16 +2,18 @@
     .text-sm.lg:flex-grow.flex.justify-start.text-black.no-underline
         = link_to image_tag('logo.png', {id: 'logo'}), root_path
 
-    - if user_signed_in?
-        .button
-            = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-black no-underline'
-        -unless current_user.member?
-            = link_to 'New article', new_content_management_article_path
-        -if current_user.editor?
-            =link_to 'Articles', content_management_articles_path
-    - else
-        .button
-            = link_to 'Register', new_user_registration_path, class: 'text-black no-underline'
-        .button
-            = link_to 'Login', new_user_session_path, class: 'text-black no-underline'
-    = notice || alert
+-if user_signed_in?
+    -if current_user.member?
+        =link_to 'Subscribe for a Month', new_subscriber_path(current_user)
+    .button
+        =link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-black no-underline'
+    -unless current_user.member?
+        = link_to 'New article', new_content_management_article_path
+    -if current_user.editor?
+        =link_to 'Articles', content_management_articles_path
+- else
+    .button
+        = link_to 'Register', new_user_registration_path, class: 'text-black no-underline'
+    .button
+        = link_to 'Login', new_user_session_path, class: 'text-black no-underline'
+= notice || alert

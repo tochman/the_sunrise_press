@@ -13,6 +13,7 @@ Feature: Journalist can create article
             | name    |
             | Sport   |
             | Weather |
+            
         And I am logged in as 'bill@email.com'
         And I click on 'New article'
 

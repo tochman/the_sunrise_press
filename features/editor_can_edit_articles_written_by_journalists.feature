@@ -8,10 +8,12 @@ Feature: Editor can edit articles written by journalists
         Given the following user exists
             | name | email          | password | password_confirmation | role   |
             | Bill | bill@email.com | password | password              | editor |
+
         And the following article exists:
             | title   | description        | content                      | user_id | category_id |
             | News    | This is a news     | I like to eat cheese!        | Bill    | Weather     |
             | Article | This is an article | I do not like to eat cheese! | Bill    | Sport       |
+            
         And I am logged in as 'bill@email.com'
         And I click on 'Articles'
 
