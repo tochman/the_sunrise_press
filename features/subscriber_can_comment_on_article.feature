@@ -21,7 +21,6 @@ Feature: Subscriber can comment on article
         And I click on 'News'
         And I fill in 'Body' field with 'This is my comment'
         And I click on 'Create Comment'
-        Then show me the page
         Then I should see 'Johanna'
         And I should see 'This is my comment'
 
