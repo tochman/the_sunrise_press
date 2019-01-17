@@ -42,8 +42,8 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def destroy
-        @article = Article.find(params[:id])
-        @article.destroy
+        article = Article.find(params[:id])
+        article.destroy
         redirect_to content_management_articles_path
     end
 
