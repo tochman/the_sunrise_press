@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   
   devise_for :users  
   resources :categories, only: [:show]
+
+  resources :subscribers, only: [:new, :create]
 end

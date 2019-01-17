@@ -8,10 +8,12 @@ Feature: Journalist can create article
         Given the following user exists
             | name | email          | password | password_confirmation | role       |
             | Bill | bill@email.com | password | password              | journalist |
+
         And the following article exists:
             | title   | description        | content                      | user_id | category_id | published |
             | News    | This is a news     | I like to eat cheese!        | Bill    | Weather     | true      |
             | Article | This is an article | I do not like to eat cheese! | Bill    | Sport       | true      |
+            
         And I am logged in as 'bill@email.com'
         And I click on 'News'
         And I click on 'Edit'
