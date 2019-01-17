@@ -13,7 +13,6 @@ Given('the following category exists:') do |table|
     end
 end
 
-
 Given('I visit the landing page') do
     visit root_path
 end
@@ -49,4 +48,16 @@ Given('I am logged in as {string}') do |email|
     @user = User.find_by email: email
     login_as @user, scope: :user
     visit root_path
+end
+
+When("I click on {string} within {string}") do |button, title|
+    article = Article.find_by(title: title)
+    dom_section = "#article_#{article.id}" 
+    within(dom_section) do 
+        click_on button
+    end
+end
+
+Then('show me the page') do
+    save_and_open_page
 end

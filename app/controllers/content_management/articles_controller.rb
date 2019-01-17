@@ -1,5 +1,13 @@
 class ContentManagement::ArticlesController < ApplicationController
 
+    def index
+        @articles = Article.all
+    end
+
+    def show
+        @article = Article.find(params[:id])
+    end
+
     def new
         @article = Article.new
         @categories = Category.all
@@ -21,20 +29,28 @@ class ContentManagement::ArticlesController < ApplicationController
 
     def update
         @article = Article.find(params[:id])
-        if @article.update(article_params.merge(category: find_category))
-            redirect_to article_path(@article), notice: 'Updated successfully!'
+
+        if params[:toggle_publish] == 'true'
+            publish_article
+            redirect_to content_management_articles_path
+        elsif @article.update(article_params.merge(category: find_category))
+                redirect_to article_path(@article), notice: 'Updated successfully!'
         else
             redirect_to edit_content_management_article_path, notice: 'Every field needs to be filled in!'
         end
+        
     end
 
     def destroy
         @article = Article.find(params[:id])
         @article.destroy
-        redirect_to root_path
+        redirect_to content_management_articles_path
     end
 
+
+
     private
+
     def article_params
         params.require(:article).permit(:title, :description, :content, :journalist)
     end
@@ -42,4 +58,9 @@ class ContentManagement::ArticlesController < ApplicationController
     def find_category
         Category.find(params[:article][:category_id])
     end
+
+    def publish_article
+        @article.update_attribute(:published, true)
+    end
+    
 end

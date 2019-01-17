@@ -8,13 +8,15 @@ Feature: Editor can delete articles
         Given the following user exists
             | name | email         | password | role   |
             | Jim  | jim@email.com | password | editor |
+
         And the following article exists:
             | title      | description     | content        | user_id | category_id |
             | It's a win | Local team wins | We didn't lose | Jim     | Sports      |
-
+        
+        And I am logged in as 'jim@email.com'
+        
     Scenario: Editor can delete article
-        Given I am logged in as 'jim@email.com'
-        And I click on 'It\'s a win'
-        Then show me the page
+        Given I click on 'Articles'
+        And I click on 'Review'
         And I click on 'Delete article'
         Then I should not see 'It\'s a win'
