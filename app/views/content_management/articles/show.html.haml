@@ -3,5 +3,6 @@
         %h1= @article.title
         %p.m-4= "Written by #{@article.user.name}"
         %p= @article.content
-        =link_to 'Approve', content_management_article_path(@article, toggle_publish: true), method: :patch
+        =link_to 'Publish Article', content_management_article_path(@article, toggle_publish: true), method: :patch
+        =link_to 'Publish as premium Article', content_management_article_path(@article, toggle_premium: true), method: :patch
         =link_to 'Edit', edit_content_management_article_path

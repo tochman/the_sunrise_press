@@ -33,6 +33,9 @@ class ContentManagement::ArticlesController < ApplicationController
         if params[:toggle_publish] == 'true'
             publish_article
             redirect_to content_management_articles_path
+        elsif params[:toggle_premium] == 'true'
+            publish_premium_article
+            redirect_to content_management_articles_path
         elsif @article.update(article_params.merge(category: find_category))
                 redirect_to article_path(@article), notice: 'Updated successfully!'
         else
@@ -55,6 +58,10 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def publish_article
+        @article.update_attribute(:published, true)
+    end
+
+    def publish_premium_article
         @article.update_attribute(:published, true)
     end
     
