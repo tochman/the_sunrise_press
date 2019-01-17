@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root controller: :articles, action: :index
   resources :articles, only: [:index, :show]
   namespace :content_management do
-    resources :articles, except: :destroy 
+    resources :articles 
   end
   
   devise_for :users  

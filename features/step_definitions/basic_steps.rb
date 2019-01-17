@@ -79,3 +79,7 @@ When("I click on {string} within {string}") do |button, title|
         click_on button
     end
 end
+
+Then('show me the page') do
+    save_and_open_page
+end
