@@ -6,9 +6,9 @@ Feature: Subscriber can comment on article
 
     Background:
         Given the following user exists
-            | name    | email             | password | role   |
-            | Bill    | bill@mail.com     | password | member |
-            | Johanna | johanna@email.com | password | member |
+            | name    | email             | password | role           |
+            | Bill    | bill@mail.com     | password | journalist     |
+            | Johanna | johanna@email.com | password | subscriber     |
 
         And the following article exists:
             | title | description    | content               | user_id | category_id | published |
@@ -16,16 +16,15 @@ Feature: Subscriber can comment on article
 
         And I visit the landing page
 
-    Scenario: Logged in user can submit a comment [Happy Path]
+    Scenario: A logged in user can submit a comment [Happy Path]
         Given I am logged in as 'johanna@email.com'
         And I click on 'News'
         And I fill in 'Body' field with 'This is my comment'
         And I click on 'Create Comment'
-        Then show me the page
         Then I should see 'Johanna'
         And I should see 'This is my comment'
 
-    Scenario: Visitor cannot submit a comment [Sad Path]
+    Scenario: A visitor cannot submit a comment [Sad Path]
         Given I click on 'News'
         Then I should not see 'Body'
         And I should not see 'Create Comment'

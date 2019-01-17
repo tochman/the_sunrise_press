@@ -15,7 +15,7 @@
                 %strong Comment:
                 = comment.body
 
-        - if user_signed_in?
+        - if user_signed_in? && current_user.role == 'subscriber'
             %h2 Add a comment:
             = form_with(model: [ @article, @article.comments.build ], local: true) do |form|
                 %p
