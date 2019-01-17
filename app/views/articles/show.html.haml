@@ -3,5 +3,18 @@
         %h1= @article.title
         %p.m-4= "Written by #{@article.user.name}"
         %p= @article.content
-        -if current_user == @article.user
+        - if current_user == @article.user
             =link_to 'Edit', edit_content_management_article_path(@article)
+        - if user_signed_in?
+            %h2 Add a comment:
+            = form_with(model: [ @article, @article.comments.build ], local: true) do |form|
+                %p
+                    = form.label :commenter
+                    %br/
+                    = form.text_field :commenter
+                %p
+                    = form.label :body
+                    %br/
+                    = form.text_area :body
+                %p
+                    = form.submit

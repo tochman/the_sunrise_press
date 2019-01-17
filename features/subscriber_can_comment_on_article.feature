@@ -10,15 +10,15 @@ Feature: Subscriber can comment on article
             | Bill | bill@email.com | password | member |
 
         And the following article exists:
-            | title   | description        | content                      | user_id | category_id | published |
-            | News    | This is a news     | I like to eat cheese!        | Bill    | Weather     | true      |
+            | title | description    | content               | user_id | category_id | published |
+            | News  | This is a news | I like to eat cheese! | Bill    | Weather     | true      |
 
         And I visit the landing page
-        And I am logged in as ' bill@email.com'
+        And I am logged in as 'bill@email.com'
         And I click on 'News'
 
     Scenario: Successfully submit a comment
-        And I fill in 'Body' with 'This is my comment'
+        And I fill in 'Body' field with 'This is my comment'
         And I click on 'Create Comment'
         Then I should see 'Bill'
         And I should see 'This is my comment'
