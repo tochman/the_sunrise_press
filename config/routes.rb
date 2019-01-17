@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   namespace :content_management do
-    resources :articles, except: :destroy 
+    resources :articles 
   end
   
   devise_for :users  
