@@ -80,6 +80,7 @@ When("I click on {string} within {string}") do |button, title|
     end
 end
 
-Then('show me the page') do
-    save_and_open_page
+
+Given("I attach a file") do
+    attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
 end
