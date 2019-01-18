@@ -1,6 +1,7 @@
 .ml-10p.mr-10p.flex.justify-center
     .flex.flex-col.items-center.m-8.text-center
         %h1= @article.title
+        %p= image_tag @article.image if @article.image.attached? 
         %p.m-4= "Written by #{@article.user.name}"
         %p= @article.content
         =link_to 'Approve', content_management_article_path(@article, toggle_publish: true), method: :patch
