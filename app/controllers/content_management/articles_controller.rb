@@ -40,6 +40,11 @@ class ContentManagement::ArticlesController < ApplicationController
         
     end
 
+    def destroy
+        article = Article.find(params[:id])
+        article.destroy
+        redirect_to content_management_articles_path
+    end
 
 
 
@@ -49,7 +54,7 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :description, :content, :journalist)
+        params.require(:article).permit(:title, :description, :content, :journalist, :image)
     end
 
     def find_category
