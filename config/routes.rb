@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root controller: :articles, action: :index
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    resources :comments
+  end
+
   namespace :content_management do
     resources :articles 
   end
@@ -9,4 +12,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
 
   resources :subscribers, only: [:new, :create]
+
 end
