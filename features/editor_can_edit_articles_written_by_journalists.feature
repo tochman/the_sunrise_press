@@ -23,6 +23,7 @@ Feature: Editor can edit articles written by journalists
         And I fill in 'Title' field with 'Article'
         And I fill in 'Description' field with 'This is an article'
         And I fill in 'Content' field with 'I do not like to eat cheese!'
+        And I attach a file
         And I select 'Sport' from 'Category'
         And I click on 'Save Article'
         Then I should see 'Updated successfully!'

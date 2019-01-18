@@ -22,6 +22,7 @@ Feature: Journalist can create article
         Given I fill in 'Title' field with 'My article'
         And I fill in 'Description' field with 'This is a description'
         And I fill in 'Content' field with 'This is my article about the sunny weather'
+        And I attach a file
         And I select 'Weather' from 'Category'
         And I click on 'Save Article'
         Then I should see 'Updated successfully!'
