@@ -18,9 +18,9 @@ RSpec.describe Article, type: :model do
     end
 
     describe 'Associations' do
-        it { should belong_to(:category) }
-        it { should belong_to(:user) }
-        it { should have_many(:comments) }
+        it { is_expected.to belong_to :category }
+        it { is_expected.to belong_to :user }
+        it { is_expected.to have_many :comments }
     end
 
     describe 'Factory' do
