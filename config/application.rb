@@ -25,6 +25,8 @@ module TheSunrisePress
       generate.controller_specs false
       generate.system_tests false
     end
+    config.i18.available_locales = [:sv, :en]
+    config.i18.default_locale = :en
     config.stripe.publishable_key = 'pk_test_QicERB8w3kyqaYW3hUUQylRH'
     config.stripe.secret_key = Rails.application.credentials.stripe[:secret_key]
   end

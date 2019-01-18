@@ -18,6 +18,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'haml-rails', '~> 1.0'
 gem 'stripe-rails'
 gem 'aws-sdk-s3'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
