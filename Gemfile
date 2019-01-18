@@ -33,6 +33,7 @@ group :development, :test do
   gem 'stripe-ruby-mock', '~> 2.5.4', require: 'stripe_mock'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'faker', '~> 1.9', '>= 1.9.1'
 end
 
 group :development do
