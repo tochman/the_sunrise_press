@@ -16,4 +16,8 @@
         = link_to 'Register', new_user_registration_path, class: 'text-black no-underline'
     .button
         = link_to 'Login', new_user_session_path, class: 'text-black no-underline'
+    .button
+        = link_to_unless_current "English", locale: 'en'
+    .button
+        = link_to_unless_current "Svenska", locale: 'sv'
 = notice || alert
