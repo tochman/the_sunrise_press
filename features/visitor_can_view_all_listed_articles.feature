@@ -12,16 +12,11 @@ Feature: Visitor can view all listed articles
         And the following article exists:
             | title | description    | content               | user_id | category_id | published |
             | News  | This is a news | I like to eat cheese! | Bill    | Sport       | true      |
-        And I visit the landing page
+      
 
     Scenario: Visitor can see articles on index page
-        Given I click on 'English'
-        Then I should see 'Title'
+        Given I visit the landing page
         And I should see 'News'
         And I should see 'This is a news'
-        
-    Scenario: Visitor can read articles on the Swedish index page
-        Given I click on 'Svenska'
-        Then I should see 'Titel'
-        And I should see 'News'
-        And I should see 'This is a news'
+
+
