@@ -33,9 +33,9 @@ end
 
 Before '@api_call_main_page' do 
   WebMock.disable_net_connect!(allow_localhost: true)
-  stub_request(:get, "https://newsapi.org/v2/everything?domains=bbc.co.uk&language=en&pageSize=4&q=all&sources=bbc-news").
-    with(
-      headers: {
+  stub_request(:get, "https://newsapi.org/v2/everything?domains=http://us.cnn.com&language=en&pageSize=4&q=all&sources=cnn").
+      with(
+        headers: {
         'Accept'=>'*/*',
         'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
         'Host'=>'newsapi.org',
