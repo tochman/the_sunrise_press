@@ -5,7 +5,9 @@
         %p.m-4= "Written by #{@article.user.name}"
         %p= @article.description
         %p= @article.content
-        - if !user_signed_in? || current_user.role == 'member'
+        - if !user_signed_in?
+            =link_to 'Subscribe', new_user_registration_path
+        - else current_user.member?
             =link_to 'Subscribe', new_subscriber_path(current_user)
         - if current_user == @article.user
             =link_to 'Edit', edit_content_management_article_path(@article)
