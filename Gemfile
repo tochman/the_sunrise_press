@@ -16,6 +16,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'webpacker', '~> 3.5'
 gem 'tailwindcss', '~> 0.2.0'
 gem 'haml-rails', '~> 1.0'
+gem 'stripe-rails'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -28,6 +30,10 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'coveralls', require: false
   gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'stripe-ruby-mock', '~> 2.5.4', require: 'stripe_mock'
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
+  gem 'faker', '~> 1.9', '>= 1.9.1'
 end
 
 group :development do

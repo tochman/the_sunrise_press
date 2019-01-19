@@ -50,10 +50,37 @@ Given('I am logged in as {string}') do |email|
     visit root_path
 end
 
+Then('I fill in the payment form') do
+    card_no = '42'
+    stripe_iframe = find("iframe[name='__privateStripeFrame4']", visible: false)
+    within_frame stripe_iframe do
+        card_field = find_field('cardnumber')
+        card_field.native.clear
+        8.times { sleep 0.1; card_field.send_keys(right: card_no); sleep 0.1; }
+    
+        find_field('exp-date').send_keys('1221')
+        find_field('cvc').send_keys('123')
+    end
+end
+
+Given("I submit the payment form") do
+    click_on 'Submit Payment'
+    sleep 3
+end
+
+Then('show me the page') do
+    save_and_open_page
+end
+
 When("I click on {string} within {string}") do |button, title|
     article = Article.find_by(title: title)
     dom_section = "#article_#{article.id}" 
     within(dom_section) do 
         click_on button
     end
+end
+
+
+Given("I attach a file") do
+    attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
 end

@@ -1,11 +1,13 @@
 class ContentManagement::ArticlesController < ApplicationController
 
+    before_action :get_article, only: [:show, :edit, :update]
+
     def index
         @articles = Article.all
     end
 
     def show
-        @article = Article.find(params[:id])
+        
     end
 
     def new
@@ -23,13 +25,10 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def edit
-        @article = Article.find(params[:id])
         @categories = Category.all
     end
 
     def update
-        @article = Article.find(params[:id])
-
         if params[:toggle_publish] == 'true'
             publish_article
             redirect_to content_management_articles_path
@@ -44,13 +43,21 @@ class ContentManagement::ArticlesController < ApplicationController
         
     end
 
+    def destroy
+        article = Article.find(params[:id])
+        article.destroy
+        redirect_to content_management_articles_path
+    end
 
 
 
     private
+    def get_article
+        @article = Article.find(params[:id])
+    end
 
     def article_params
-        params.require(:article).permit(:title, :description, :content, :journalist)
+        params.require(:article).permit(:title, :description, :content, :journalist, :image)
     end
 
     def find_category
