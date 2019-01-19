@@ -69,7 +69,7 @@ class ContentManagement::ArticlesController < ApplicationController
     end
 
     def publish_premium_article
-        @article.update_attribute(:published, true)
+        @article.update_attribute(:premium, true)
     end
     
 end

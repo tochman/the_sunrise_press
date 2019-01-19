@@ -15,19 +15,22 @@ Feature: Editor can restrict premium articles for non-subscribers
             | title   | description        | content                      | user_id | category_id | premium | published |
             | News    | This is a news     | I like to eat cheese!        | Bill    | Weather     | false   | true      |
             | Article | This is an article | I do not like to eat cheese! | Bill    | Sport       | true    | true      |
+            # NOTE: The "News" article above was incorrectly set to published = true, but should have been false.
+            # It will be published as premium in the scenario below, hence initially it should be neither published
+            # nor premium.
 
-    Scenario: Editor can restrict premium which is not visible for non-subscribers
+    Scenario: Editor can restrict content by making it premium
         Given I am logged in as 'bill@email.com'
         And I click on 'Articles'
         And I click on 'Review' within 'News'
-        And I click on 'Publish as premium Article'
+        And I click on 'Set as premium article'
         And I click on 'Logout'
         And I am logged in as 'jill@email.com'
         When I click on 'News'
-        Then I should see 'Premium content, to read please subscribe for us'
+        Then I should see 'Premium content. To access content, please subscribe.'
     
     Scenario: Subscriber can see premium content
         Given I am logged in as 'sill@email.com'
         And I click on 'Article'
         Then I should see 'I do not like to eat cheese!'
-        And I should not see 'Premium content, to read please subscribe for us'
+        And I should not see 'Premium content. To access content, please subscribe.'

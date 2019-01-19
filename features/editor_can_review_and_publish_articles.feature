@@ -25,7 +25,7 @@ Feature: Editor can review and publish articles
 
     Scenario: Editor can approve articles
         Given I click on 'Review' within 'News'
-        When I click on 'Publish Article'
+        When I click on 'Publish article'
         Then I should see 'News' within 'published'
         And I should see 'This is a news' within 'published'
         And I should see 'Article' within 'not_published'

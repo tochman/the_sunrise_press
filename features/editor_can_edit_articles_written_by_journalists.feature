@@ -19,7 +19,7 @@ Feature: Editor can edit articles written by journalists
 
     Scenario: Editor can edit articles written by journalists
         Given I click on 'Review' within 'News'
-        When I click on 'Edit'
+        When I click on 'Edit article'
         And I fill in 'Title' field with 'Article'
         And I fill in 'Description' field with 'This is an article'
         And I fill in 'Content' field with 'I do not like to eat cheese!'

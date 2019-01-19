@@ -4,10 +4,13 @@
         %p= image_tag @article.image if @article.image.attached? 
         %p.m-4= "Written by #{@article.user.name}"
         %p= @article.description
-        %p= @article.content
+        - if !user_signed_in? || current_user.role == 'member'
+            = 'Premium content. To access content, please subscribe.'
+        - else
+            %p= @article.content
         - if current_user == @article.user
-            =link_to 'Edit', edit_content_management_article_path(@article)
-        
+            =link_to 'Edit article', edit_content_management_article_path(@article)
+
         %h2 Comments
         - @article.comments.each do |comment|
             %p
