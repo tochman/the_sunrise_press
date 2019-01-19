@@ -1,3 +1,7 @@
 sv:
   register: Registrera
   login: logga in
+  Sport: Sport
+  Weather: Väder
+  Politics: Politik
+  Culture: Kultur
