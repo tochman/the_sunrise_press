@@ -2,9 +2,10 @@
     .text-sm.lg:flex-grow.flex.justify-start.text-black.no-underline
         = link_to image_tag('logo.png', {id: 'logo'}), root_path
 
+-if  !user_signed_in? || current_user.role == 'member'
+    =link_to 'Become a subscriber', new_subscriber_path(current_user)
+
 -if user_signed_in?
-    -if current_user.member?
-        =link_to 'Subscribe for a Month', new_subscriber_path(current_user)
     .button
         =link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-black no-underline'
     -unless current_user.member?
