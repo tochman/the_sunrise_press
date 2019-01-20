@@ -26,7 +26,6 @@ Feature: User can buy a subscription
         And I click on 'Subscribe'
         And I pay for a subscription
         Then I should see 'Thank you for subscribing to The Sunrise Press!'
-        # And I should see 'I like to eat cheese!'
         
     Scenario: Visitors can buy a subscription from landing page
         Given I visit the landing page
