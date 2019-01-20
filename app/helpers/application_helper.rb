@@ -17,10 +17,10 @@ module ApplicationHelper
     end
 
     def user_is_a_member
-        current_user.role == 'member'
+        user_signed_in? && current_user.role == 'member'
     end
 
     def user_is_a_editor
-        current_user.role == 'editor'
+        user_signed_in? && current_user.role == 'editor'
     end
 end
