@@ -1,0 +1,5 @@
+- @users.each do |user|
+    -if user.role == 'member'
+        %p= user.name
+        %p= user.email
+        %p= link_to 'Journalist', user, method: :patch

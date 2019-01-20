@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
 
   resources :subscribers, only: [:new, :create]
+  resources :users, only: [:index, :update]
 
 end
