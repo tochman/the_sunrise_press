@@ -24,7 +24,7 @@ Feature: Visitor can change language
     Scenario: Visitor can see categories, register and login in swedish language
         Given I click on 'Svenska'
         Then I should see 'Registrera'
-        And I should see 'logga in'
+        And I should see 'Logga in'
         And I should see 'Sport'
         And I should see 'Väder'
         And I should see 'Politik'
