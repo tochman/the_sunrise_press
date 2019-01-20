@@ -16,7 +16,7 @@ Feature: Journalist can create article
             
         And I am logged in as 'bill@email.com'
         And I click on 'News'
-        And I click on 'Edit'
+        And I click on 'Edit article'
 
     Scenario: Journalist can update article
         Given I fill in 'Title' field with 'My article'

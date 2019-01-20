@@ -44,4 +44,3 @@ Feature: User can buy a subscription
         And I click on 'Become a subscriber'
         And I pay for a subscription
         Then I should see 'Thank you for subscribing to The Sunrise Press!'
-
