@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_01_17_135950) do
     t.bigint "category_id"
     t.bigint "user_id"
     t.boolean "published", default: false
+    t.boolean "premium", default: false
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end

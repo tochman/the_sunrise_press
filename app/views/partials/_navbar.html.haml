@@ -3,14 +3,10 @@
         = link_to image_tag('logo.png', {id: 'logo'}), root_path
 
 -if user_signed_in?
-    -if current_user.member?
-        =link_to 'Subscribe for a Month', new_subscriber_path(current_user)
-    .button
-        =link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-black no-underline'
-    -unless current_user.member?
-        = link_to 'New article', new_content_management_article_path
-    -if current_user.editor?
-        =link_to 'Articles', content_management_articles_path
+    = link_to 'Subscribe', new_subscriber_path(current_user) if current_user.member?
+    = link_to 'New article', new_content_management_article_path unless current_user.member?
+    = link_to 'Articles', content_management_articles_path if current_user.editor?
+    = link_to 'Logout', destroy_user_session_path, method: :delete
 - else
     .button
         = link_to t('register'), new_user_registration_path
@@ -21,5 +17,3 @@
     .button
         = link_to_unless_current "Svenska", locale: 'sv'
 = notice || alert
-
-

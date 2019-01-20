@@ -10,8 +10,8 @@ RSpec.describe Comment, type: :model do
   end
 
   describe 'Associations' do
-    it { should belong_to(:article) }
-    it { should belong_to(:user) }
+    it { is_expected.to belong_to :article }
+    it { is_expected.to belong_to :user }
   end
 
   describe FactoryBot do 

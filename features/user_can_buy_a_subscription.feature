@@ -13,7 +13,7 @@ Feature: User can buy a subscription
         And I am logged in as 'bill@email.com'
 
     Scenario: User can buy a subscription
-        Given I click on 'Subscribe for a Month'
+        Given I click on 'Subscribe'
         And I fill in the payment form
         And I submit the payment form
         Then I should see 'Thank you for subscribing The Sunrise Press, the maker of news while making news'

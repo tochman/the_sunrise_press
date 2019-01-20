@@ -1,6 +1,6 @@
 sv:
   register: Registrera
-  login: logga in
+  login: Logga in
   Sport: Sport
   Weather: Väder
   Politics: Politik
