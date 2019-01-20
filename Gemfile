@@ -19,6 +19,7 @@ gem 'haml-rails', '~> 1.0'
 gem 'stripe-rails'
 gem 'aws-sdk-s3'
 gem 'news-api'
+gem 'faker', '~> 1.9', '>= 1.9.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

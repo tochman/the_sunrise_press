@@ -1,5 +1,6 @@
 .flex.flex-wrap.justify-center
     -@category.articles.each do |article|
-        .m-8.w-33p.border-2.shadow.text-center.flex.flex-col
-            = link_to "#{article.title}", article_path(article), {class: 'main'}
-            %h3.mt-8= article.description
+        -if article.published?
+            .m-8.w-33p.border-2.shadow.text-center.flex.flex-col
+                = link_to "#{article.title}", article_path(article), {class: 'main'}
+                %h3.mt-8= article.description
