@@ -4,11 +4,11 @@
         %p= image_tag @article.image if @article.image.attached? 
         %p.m-4= "Written by #{@article.user.name}"
         %p= @article.description
-        - if !user_signed_in? || current_user.role == 'member'
+        - if user_cannot_access_content
             = 'Premium content. To access content, please subscribe.'
         - else
             %p= @article.content
-        - if current_user == @article.user
+        - if current_user_is_the_author
             =link_to 'Edit article', edit_content_management_article_path(@article)
 
         %h2 Comments
@@ -20,7 +20,7 @@
                 %strong Comment:
                 = comment.body
 
-        - if user_signed_in? && current_user.role == 'subscriber'
+        - if current_user_is_a_subscriber
             %h2 Add a comment:
             = form_with(model: [ @article, @article.comments.build ], local: true) do |form|
                 %p
