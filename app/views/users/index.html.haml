@@ -1,5 +1,13 @@
-- @users.each do |user|
-    -if user.role == 'member'
-        %p= user.name
-        %p= user.email
-        %p= link_to 'Journalist', user, method: :patch
+%h1 Users List
+%br
+%table
+    %tr
+        %th Email
+        %th Role
+        %th Change Role
+    - @users.each do |user|
+        %tr
+            %td= user.email
+            %td= user.role
+            -if user.role == 'member'
+                %td= link_to 'Set as Journalist', user, method: :patch

@@ -14,11 +14,8 @@ Feature: Editor can grant journalist access to write articles
     Scenario: Editor can grant member to be a journalist 
         Given I am logged in as 'jon@email.com'
         And I click on 'Users'
-        And I click on 'Journalist'
+        And I click on 'Set as Journalist'
         Then I should see 'Updated Successfully!'
-        When I am logged in as 'bill@email.com'
-        Then I should see 'New Article'
-
 
 
    
