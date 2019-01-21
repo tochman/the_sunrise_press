@@ -1,4 +1,7 @@
-@javascript @stripe @api_call_main_page
+@javascript 
+@stripe 
+@api_call_main_page
+
 Feature: User can buy a subscription
 
     As a user
