@@ -9,15 +9,14 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
-gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'webpacker', '~> 3.5'
 gem 'tailwindcss', '~> 0.2.0'
 gem 'haml-rails', '~> 1.0'
 gem 'stripe-rails'
 gem 'aws-sdk-s3'
+gem 'news-api'
 gem 'rails-i18n'
 gem 'faker', '~> 1.9', '>= 1.9.1'
 
@@ -35,6 +34,7 @@ group :development, :test do
   gem 'stripe-ruby-mock', '~> 2.5.4', require: 'stripe_mock'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'webmock'
 end
 
 group :development do
@@ -43,6 +43,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
