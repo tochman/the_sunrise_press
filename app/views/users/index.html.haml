@@ -6,8 +6,11 @@
         %th Role
         %th Change Role
     - @users.each do |user|
-        %tr
-            %td= user.email
-            %td= user.role
-            -if user.role == 'member'
-                %td= link_to 'Set as Journalist', user, method: :patch
+        - unless user.role === 'editor'
+            %tr
+                %td= user.email
+                %td= user.role
+                -if user.role == 'member'
+                    %td= link_to 'Set as Journalist', user, method: :patch
+                -if user.role == 'journalist'
+                    %td= link_to 'Set as Member', user, method: :patch
