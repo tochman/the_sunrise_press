@@ -17,6 +17,7 @@ gem 'haml-rails', '~> 1.0'
 gem 'stripe-rails'
 gem 'aws-sdk-s3'
 gem 'news-api'
+gem 'rails-i18n'
 gem 'faker', '~> 1.9', '>= 1.9.1'
 
 group :development, :test do
