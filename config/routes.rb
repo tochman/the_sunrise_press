@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   namespace :content_management do
     resources :articles 
+    resources :users, only: [:index, :update]
   end
   
   devise_for :users  
   resources :categories, only: [:show]
 
   resources :subscribers, only: [:new, :create]
-  resources :users, only: [:index, :update]
+  
 
 end

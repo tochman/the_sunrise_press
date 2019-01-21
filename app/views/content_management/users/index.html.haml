@@ -11,6 +11,6 @@
                 %td= user.email
                 %td= user.role
                 -if user.role == 'member'
-                    %td= link_to 'Set as Journalist', user, method: :patch
+                    %td= link_to 'Set as Journalist', content_management_user_path(user), method: :patch
                 -if user.role == 'journalist'
-                    %td= link_to 'Set as Member', user, method: :patch
+                    %td= link_to 'Set as Member', content_management_user_path(user), method: :patch

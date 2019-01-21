@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class ContentManagement::UsersController < ApplicationController
     before_action :authenticate_user!, :require_to_be_editor
     def index
         @users = User.all
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     def update
         user = User.find(params[:id])
         user.update_attribute(:role, user.role == 'member' ? 'journalist' : 'member')
-        redirect_to users_path, notice: 'Updated Successfully!'
+        redirect_to content_management_users_path, notice: 'Updated Successfully!'
     end
 
     def require_to_be_editor

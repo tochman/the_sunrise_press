@@ -13,8 +13,8 @@ Feature: Editor can grant journalist access to write articles
 
     Scenario: Editor can switch role between member and journalist
         Given I am logged in as 'jon@email.com'
-        And I click on 'Users'
+        When I click on 'Users'
         And I click on 'Set as Journalist'
         Then I should see 'Updated Successfully!'
         And I click on 'Set as Member'
-        Then I should see 'Updated Successfully!'
+        And I should see 'Updated Successfully!'
