@@ -9,8 +9,14 @@
     = link_to 'Articles', content_management_articles_path if user_is_a_editor
     = link_to 'Logout', destroy_user_session_path, method: :delete
 - else
-    = link_to 'Register', new_user_registration_path
-    = link_to 'Login', new_user_session_path
+    .button
+        = link_to t('register'), new_user_registration_path
+    .button
+        = link_to t('login'), new_user_session_path
+    .button
+        = link_to_unless_current "English", locale: 'en'
+    .button
+        = link_to_unless_current "Svenska", locale: 'sv'
     = link_to 'Become a subscriber', new_user_registration_path if user_is_a_visitor
 %br
 = notice || alert
