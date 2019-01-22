@@ -37,7 +37,7 @@ RSpec.describe 'Article index', type: :request do
 
       it 'includes info about image' do
         expected_url = JSON.parse(response.body)['articles'][0]['image']
-        expect(expected_url).to match /attachment.png/ 
+        expect(expected_url).to match(/attachment.png/)
       end
     end
   end
