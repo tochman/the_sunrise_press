@@ -4,7 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Article index', type: :request do
   describe 'GET /api/articles' do
-    let!(:articles) { 5.times { create(:article) } }
+    let!(:published_articles) { 5.times { create(:article, published: true) } }
+    let!(:unpublished_articles) { 5.times { create(:article, published: false) } }
 
     before do 
       get '/api/articles'
@@ -14,6 +15,7 @@ RSpec.describe 'Article index', type: :request do
     end
 
     it 'returns 5 articles' do
+      binding.pry
       expect(JSON.parse(response.body)['articles'].count).to eq 5
     end
   end
